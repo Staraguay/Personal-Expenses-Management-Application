@@ -9,20 +9,21 @@
 </head>
 <body>
 
-    <!-- Navigation Menu -->
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">💰 Expenses Manager</a>
-            <button class="btn btn-outline-light" onclick="showDashboard()">Dashboard</button>
-            <button class="btn btn-outline-light" onclick="showTransactions()">Transactions</button>
-            <button class="btn btn-outline-light" onclick="showSettings()">Settings</button>
-        </div>
-    </nav>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>💰 Expenses Manager</h2>
+        <ul>
+            <li><a href="#" onclick="showDashboard()">🏠 Dashboard</a></li>
+            <li><a href="#" onclick="showTransactions()">📄 Transactions</a></li>
+            <li><a href="#" onclick="showSettings()">⚙️ Settings</a></li>
+        </ul>
+    </div>
 
-    <!-- Dashboard Section -->
-    <div id="dashboard" class="container text-center mt-5">
+    <!-- Main Content Area -->
+    <div class="content">
         <h2>Welcome to Personal Expenses Manager</h2>
         <p>Track your income and expenses easily.</p>
+        
         <div class="row">
             <div class="col-md-4">
                 <div class="card p-3 shadow">
