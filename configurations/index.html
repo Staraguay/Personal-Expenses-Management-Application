@@ -38,10 +38,11 @@
       rel="stylesheet"
     />
 
-    <script type="module" src="./assets/js/global.js"></script>
-    <script type="module" src="./assets/js/main.js"></script>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>Dashboard | Personal Expenses Management Application</title>
+    <script type="module" src="../assets/js/global.js"></script>
+    <script type="module" src="../assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <title>Configurations | Personal Expenses Management Application</title>
   </head>
   <body>
     <main class="d-flex min-vh-100">
@@ -50,7 +51,7 @@
         style="width: 280px"
       >
         <a
-          href="#"
+          href="/"
           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none gap-3"
         >
           <svg
@@ -79,11 +80,10 @@
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
+          <li>
             <a
               href="/"
-              class="d-flex align-items-center gap-3 nav-link active"
-              aria-current="page"
+              class="d-flex align-items-center gap-3 nav-link link-body-emphasis"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,6 @@
               Dashboard
             </a>
           </li>
-
           <li>
             <a
               href="/reports"
@@ -121,10 +120,11 @@
               Reports
             </a>
           </li>
-          <li>
+          <li class="nav-item">
             <a
-              href="/configurations"
-              class="d-flex align-items-center gap-3 nav-link link-body-emphasis"
+              href="#"
+              class="d-flex align-items-center gap-3 nav-link active"
+              aria-current="page"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,9 +171,9 @@
           </ul>
         </div>
       </div>
-
       <div class="p-4">
-        <h1>Dashboard Page</h1>
+        <h1>Configurations Page</h1>
+
         <div>Contents</div>
       </div>
     </main>
