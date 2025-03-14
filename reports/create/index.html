@@ -172,10 +172,89 @@
           </ul>
         </div>
       </div>
-      <div class="p-4">
-        <h1>Reports List Page</h1>
+      <div class="p-4 d-flex flex-column gap-4">
+        <h1>Report Create Page</h1>
 
-        <div>Contents</div>
+        <div>
+          <form class="d-flex flex-column gap-4">
+            <div class="d-flex flex-column gap-3">
+              <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nameInput"
+                  placeholder="Good apples"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Category</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputAmount">Prices Amount</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">CAD</div>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="inputAmount"
+                    placeholder="100"
+                    aria-describedby="amountHelp"
+                    min="0"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputDate">Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="inputDate"
+                  placeholder="2025-10-10"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputShop">Shop</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputShop"
+                  placeholder="Awesome shop"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputPayment">Payment type</label>
+                <select
+                  id="inputPayment"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <p>
+          <a class="link-opacity-100" href="/reports/">Back to list</a>
+        </p>
       </div>
     </main>
   </body>
