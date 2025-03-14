@@ -1,0 +1,130 @@
+/* List */
+
+.List_box{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+height: 70%;
+left: 25%;
+right: 10%;
+top: 134px;
+thead{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 1021px;
+height: 56px;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+
+.id{
+
+
+width: 70px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: #828282;
+flex: none;
+order: 0;
+flex-grow: 0;
+width: 433px;
+height: 24px;
+}
+
+
+
+
+
+.transaction{
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+
+.amount {
+
+
+width: 120px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+
+
+.category{
+
+
+width: 201px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+
+color: #000000;
+flex: none;
+order: 3;
+flex-grow: 0;
+}
+
+
+
+
+.date{
+
+width: 48px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-align: right;
+
+color: #000000;
+flex: none;
+order: 4;
+flex-grow: 0;
+}
+
+
