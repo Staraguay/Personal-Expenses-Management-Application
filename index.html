@@ -172,9 +172,40 @@
         </div>
       </div>
 
-      <div class="p-4">
-        <h1>Dashboard Page</h1>
-        <div>Contents</div>
+      <div class="container mt-5 px-5">
+        <div class="pb-3 d-flex justify-content-end">
+            <input type="button" class="btn btn-primary" value="Export Data">
+        </div>
+        <div>
+          <h1>Dashboard</h1>
+        </div>
+        <div class="d-flex justify-content-between mt-5">
+          <div class="card dashboard-card">
+            <div class="card-body">
+              <h5 class="card-title">Total expended amount</h5>
+              <h3 class="card-money">$2.305</h3>
+              <div class="card-text-label">+20% more than the previous month</div>
+            </div>
+          </div>
+          <div class="card dashboard-card">
+            <div class="card-body">
+              <h5 class="card-title">Money received</h5>
+              <h3 class="card-money">$2.305</h3>
+              <div class="card-text-label">+20% more than the previous month</div>
+            </div>
+          </div>
+          <div class="card dashboard-card">
+            <div class="card-body">
+              <h5 class="card-title">Shopping</h5>
+              <h3 class="card-money">$2.305</h3>
+              <div class="card-text-label">+33% more than the previous month</div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-5 mb-5 d-flex flex-direction-column justify-content-center">
+          <canvas id="myChart"></canvas>
+          <div class="legend d-flex flex-wrap" id="chartLegend"></div>
+        </div>
       </div>
     </main>
   </body>
