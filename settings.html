@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Personal Expenses Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>💰 Expenses Manager</h2>
+        <ul>
+            <li><a href="index.html">🏠 Dashboard</a></li>
+            <li><a href="transactions.html">📄 Transactions</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Settings Content -->
+    <div class="content">
+        <h2>⚙️ Settings</h2>
+        <form id="settingsForm">
+            <label for="currency">Select Currency:</label>
+            <select id="currency">
+                <option value="USD">$ - USD</option>
+                <option value="EUR">€ - EUR</option>
+                <option value="GBP">£ - GBP</option>
+                <option value="CAD">$ - CAD</option>
+            </select>
+
+            <label for="nickname">Nickname:</label>
+            <input type="text" id="nickname" placeholder="Enter your nickname">
+
+            <label for="job">Job Title:</label>
+            <input type="text" id="job" placeholder="Enter your job">
+
+            <button type="button" onclick="saveSettings()">Save Settings</button>
+        </form>
+        <p id="savedMessage" style="color: rgb(0, 9, 128); display: none;">✅ Settings Saved!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

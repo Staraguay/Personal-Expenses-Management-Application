@@ -1,63 +1,128 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Inter', sans-serif;  /* Clean and modern font */
+    background-color: #f8f9fa;  /* Light gray background */
     margin: 0;
     padding: 0;
     display: flex;
+    color: #333; /* Dark gray text */
 }
 
-/* Sidebar styles */
+/* Sidebar Styles */
 .sidebar {
     width: 250px;
-    background: #343a40;
-    color: white;
+    background: #ffffff; /* White sidebar */
+    color: #333;
     height: 100vh;
     position: fixed;
     padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+    border-right: 1px solid #e0e0e0; /* Soft border */
 }
 
 .sidebar h2 {
     text-align: center;
-    margin-bottom: 30px;
+    font-weight: 600;
+    color: #333;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.sidebar ul li a:hover {
-    background: #4b9beb;
-}
-
-/* Main Content */
-.content {
-    margin-left: 260px;
-    padding: 20px;
-    width: 100%;
-}
-
-.card {
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
     margin-top: 20px;
 }
 
-p {
-    font-size: 1.2em;
-    font-weight: bold;
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #e3f2fd; /* Light blue hover effect */
+    color: #007aff;
+}
+
+/* Content Area */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #007aff;
+    background: white;
+}
+
+/* Button Styling */
+button {
+    background-color: #007aff; /* Notion-like blue */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #005ecb;
+}
+
+/* Success Message */
+#savedMessage {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #007aff;
 }
