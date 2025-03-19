@@ -54,3 +54,104 @@ data.labels.forEach((label, index) => {
     legendItem.innerHTML = `<span style="background-color: ${data.datasets[0].backgroundColor[index]};"></span> ${label}`;
     legendContainer.appendChild(legendItem);
 });
+
+//linechart option2
+
+// data per moth
+const dataIncoming = [65, 59, 80, 81, 56, 55, 40];
+const dataExpenses = [115, 79, 18, 71, 62, 45, 0];
+
+const labelsMix = ["Octuber","November","December","January","February","March","April"]
+const dataMix = {
+  labels: labelsMix,
+  datasets: [
+    {
+      label: 'Expenses',
+      data: dataExpenses,
+      borderColor: 'rgb(235, 67, 52)',
+      backgroundColor: 'rgba(235, 67, 52,0.5)',
+      yAxisID: 'y',
+    },
+    {
+      label: 'Incomings',
+      data: dataIncoming,
+      borderColor: 'rgb(75, 192, 192)',
+      backgroundColor: 'rgba(75, 192, 192,0.5)',
+      yAxisID: 'y1',
+    }
+  ]
+};
+
+const totalDuration = 5000;
+const delayBetweenPoints = totalDuration / dataMix.datasets[0].data.length;
+const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+const animation = {
+  x: {
+    type: 'number',
+    easing: 'linear',
+    duration: delayBetweenPoints,
+    from: NaN, // the point is initially skipped
+    delay(ctx) {
+      if (ctx.type !== 'data' || ctx.xStarted) {
+        return 0;
+      }
+      ctx.xStarted = true;
+      return ctx.index * delayBetweenPoints;
+    }
+  },
+  y: {
+    type: 'number',
+    easing: 'linear',
+    duration: delayBetweenPoints,
+    from: previousY,
+    delay(ctx) {
+      if (ctx.type !== 'data' || ctx.yStarted) {
+        return 0;
+      }
+      ctx.yStarted = true;
+      return ctx.index * delayBetweenPoints;
+    }
+  }
+};
+
+const configMix = {
+    type: 'line',
+    data: dataMix,
+    options: {
+      animation,
+      responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      stacked: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Incomings vs Expenses'
+        }
+      },
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+  
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
+      }
+    },
+  };
+
+  const myChartMix = new Chart(
+    document.getElementById("myChartMix"),
+    configMix
+);
