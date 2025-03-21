@@ -21,12 +21,7 @@
     ></script>
 
     <!-- jQuery -->
-    <script
-      defer
-      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -42,25 +37,94 @@
 <body>
 
     <div class="List_box">
-        <table id="myTable" class="display" style="width:100
-    ">
-    
-    <thead> 
-        <tr>
-            <th class="id">ID</th>
-            <th class="transaction">Transaction</th>
-            <th class="amount">Amount</th>
-            <th class="category">Category</th>
-            <th class="date">Date</th>
-        </tr>
+      <table id="list-transaction" class="table-hover" >
+        <thead> 
+          <tr>
+              <th>ID</th>
+              <th>Transaction</th>
+              <th >Amount</th>
+              <th >Category</th>
+              <th >Date</th>      
+      </thead>
+        
+      </table>
+      </table>
+        
+        <script>
+          new const firstitem = {
+              "id": 1,
+              "transaction": "Report 1",
+              "Amount" : 1000,
+              "Category" : "Category 1",
+              "Date" : "2025-01-01",
+            }
+          new  const Secoitem = {
+              "id": 2,
+              "transaction": "Report 2",
+              "Amount" : 1000,
+              "Category" : "Category 2",
+              "Date" : "2025-01-01",
+            }  
+          new const ListTransactions = [
+              firstitem, Secoitem
+            ]
+          $(document).ready(function () {
+            
+            
+            $("#list-transaction").DataTable(
+              {
+                data: ListTransactions,
+                lengthMenu: [[10,25,50,100,-1],[10,25,50,100,"All"]],
+                pageLength: 10,
+                columns: [
+                  { data: 'id' },
+                  { data: 'transaction' },
+                  { data: 'Amount' },
+                  { data: 'Category' },
+                  { data: 'Date' },
 
-    </thead>
-    </table>
-    </div>
-    <script>
-      $(document).ready(function() {
-          $('#myTable').DataTable();
-      });
-  </script>
+                ]
+
+              }
+            );
+          });
+
+          function exportTransactionsToJSON() {
+        const dataStr = JSON.stringify(ListTransactions, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "transactions.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+      
+      function importTransactionsFromJSON() {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = ".json";
+        input.onchange = (event) => {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const contents = e.target.result;
+            const importedTransactions = JSON.parse(contents);
+            ListTransactions.length = 0; // Clear existing transactions
+            ListTransactions.push(...importedTransactions); // Add new transactions
+            $("#list-transaction").DataTable().clear().rows.add(ListTransactions).draw(); // Refresh DataTable
+          };
+          reader.readAsText(file);
+        };
+        input.click();
+      }
+          
+        </script>
+      </div>
+
+        
+      
 </body>
 </html>
