@@ -4,7 +4,6 @@ body {
     background-color: #f8f9fa;  /* Light gray background */
     margin: 0;
     padding: 0;
-    display: flex;
     color: #333; /* Dark gray text */
 }
 
@@ -53,7 +52,6 @@ body {
 
 /* Content Area */
 .content {
-    margin-left: 260px;
     padding: 40px;
     width: 100%;
     max-width: 900px;
@@ -99,9 +97,9 @@ input:focus, select:focus {
     background: white;
 }
 
-/* Button Styling */
-button {
-    background-color: #007aff; /* Notion-like blue */
+/* Button Styling - You can use th btn classes of bootstrap or call it with other name because it modifies all the buttons */ 
+/* button {
+    background-color: #007aff; /* Notion-like blue
     color: white;
     padding: 12px;
     border: none;
@@ -112,11 +110,11 @@ button {
     display: block;
     width: 100%;
     margin-top: 15px;
-}
+    }
 
 button:hover {
     background-color: #005ecb;
-}
+} */
 
 /* Success Message */
 #savedMessage {
@@ -169,6 +167,9 @@ canvas {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
+    justify-content: center;
+    align-content: center;
+    padding-left: 25px;
 }
 .legend div {
     display: flex;
@@ -181,17 +182,11 @@ canvas {
     display: inline-block;
 }
 
-.legend{
-    padding-left: 100px;
-    justify-content: center;
-    align-content: center;
-    row-gap: 20px;
-}
-
 .legend-child{
 
     width: calc(50% - 10px);
     font-size: 1.5rem;
+    
 }
 
 .legend-child span{
@@ -200,3 +195,6 @@ canvas {
     height: 30px;
 
 }
+
+
+/******* media querys *********/

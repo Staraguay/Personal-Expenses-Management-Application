@@ -169,8 +169,8 @@
       </div>
       <div class="p-4 d-flex flex-grow-1 flex-column gap-4">
         <h1>Configurations Page</h1>
-
-        <div class="content">
+        <div class="d-flex justify-content-center">
+        <div class="content d-flex flex-column">
           <h2>⚙️ Settings</h2>
           <form id="settingsForm">
               <label for="currency">Select Currency:</label>
@@ -187,10 +187,11 @@
               <label for="job">Job Title:</label>
               <input type="text" id="job" placeholder="Enter your job">
   
-              <button type="button" onclick="saveSettings()">Save Settings</button>
+              <button type="button" class="btn btn-primary mt-3 align-center" onclick="saveSettings()">Save Settings</button>
           </form>
           <p id="savedMessage" style="color: green; display: none;">✅ Settings Saved!</p>
         </div>
+      </div>
         <script src="settings_script.js"></script>
       </div>
     </main>

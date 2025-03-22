@@ -219,3 +219,6 @@ const configMix = {
     configMix
 );
 
+window.addEventListener('resize', () => {
+  myChartMix.resize();
+});
