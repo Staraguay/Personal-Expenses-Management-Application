@@ -21,12 +21,8 @@
     ></script>
 
     <!-- jQuery -->
-    <script
-      defer
-      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -171,10 +167,31 @@
           </ul>
         </div>
       </div>
-      <div class="p-4">
+      <div class="p-4 d-flex flex-grow-1 flex-column gap-4">
         <h1>Configurations Page</h1>
 
-        <div>Contents</div>
+        <div class="content">
+          <h2>⚙️ Settings</h2>
+          <form id="settingsForm">
+              <label for="currency">Select Currency:</label>
+              <select id="currency">
+                  <option value="USD">$ - USD</option>
+                  <option value="EUR">€ - EUR</option>
+                  <option value="GBP">£ - GBP</option>
+                  <option value="CAD">$ - CAD</option>
+              </select>
+  
+              <label for="nickname">Nickname:</label>
+              <input type="text" id="nickname" placeholder="Enter your nickname">
+  
+              <label for="job">Job Title:</label>
+              <input type="text" id="job" placeholder="Enter your job">
+  
+              <button type="button" onclick="saveSettings()">Save Settings</button>
+          </form>
+          <p id="savedMessage" style="color: green; display: none;">✅ Settings Saved!</p>
+        </div>
+        <script src="settings_script.js"></script>
       </div>
     </main>
   </body>
