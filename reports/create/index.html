@@ -151,10 +151,9 @@
         </div>
       </div>
 
-      <div class="p-4 d-flex flex-column gap-4">
+      <div class="p-4 container">
         <h1>Report Create Page</h1>
-
-        <div>
+        <div class="p-5">
           <form id="form-create" class="d-flex flex-column gap-4">
             <div class="d-flex flex-column gap-3">
               <div class="form-group">
@@ -237,13 +236,13 @@
             <div class="d-flex gap-3 align-items-center">
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-success"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
                 Submit
               </button>
-              <a class="link-opacity-100" href="/reports/">Back to list</a>
+              <a class="btn btn-danger link-opacity-100" href="/reports/">Back to list</a>
             </div>
           </form>
         </div>
@@ -273,7 +272,7 @@
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn btn-danger"
                   data-bs-dismiss="modal"
                 >
                   Cancel
@@ -281,7 +280,7 @@
                 <button
                   type="submit"
                   form="form-create"
-                  class="btn btn-primary"
+                  class="btn btn-success"
                 >
                   Create
                 </button>
