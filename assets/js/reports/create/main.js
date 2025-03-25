@@ -27,18 +27,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const name = formData.get("name");
     const category = formData.get("category");
-    const price = formData.get("price");
+    const amount = formData.get("amount");
     const date = formData.get("date");
     const shop = formData.get("shop");
-    const payment = formData.get("paymentType");
+    const transaction = formData.get("transaction");
 
     const formValues = {
       name,
+      transaction,
+      amount,
       category,
-      price,
       date,
       shop,
-      payment,
     };
 
     // Store form values in localStorage
@@ -46,9 +46,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     if (array) {
       const reportData = JSON.parse(array);
-      console.log(reportData);
-      reportData.push(formValues);
-      localStorage.setItem("reportData", JSON.stringify(reportData));
+
+      const ids = reportData.map((item) => {
+        return Number(item.id);
+      });
+      const latestId = Math.max(...ids);
+
+      const data = {
+        id: `${latestId + 1}`,
+        ...formValues,
+      };
+
+      const newData = [...reportData, data];
+      localStorage.setItem("reportData", JSON.stringify(newData));
     } else {
       const reportData = [formValues];
       localStorage.setItem("reportData", JSON.stringify(reportData));
