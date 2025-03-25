@@ -32,42 +32,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   loadSettings();
 });
 
-// function to read de JSON data
-async function loadData() {
-  try {
-    const response = await fetch("../../sampleData.json");
-    return await response.json();
-  } catch (error) {
-    return console.error("Error al cargar el JSON:", error);
-  }
-}
-
-//data initialization for transactions table
-
-loadData()
-  .then((data) => {
-    const ListTransactions = data;
-
-    $(document).ready(function () {
-      $("#list-transaction").DataTable({
-        data: ListTransactions,
-        lengthMenu: [
-          [10, 25, 50, 100, -1],
-          [10, 25, 50, 100, "All"],
-        ],
-        pageLength: 10,
-        columns: [
-          { data: "id" },
-          { data: "transaction" },
-          { data: "amount" },
-          { data: "category" },
-          { data: "date" },
-        ],
-      });
-    });
-  })
-  .catch((error) => console.error(error));
-
 // color variables
 
 const firstColor = getComputedStyle(document.documentElement)
