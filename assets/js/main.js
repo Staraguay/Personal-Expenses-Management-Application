@@ -19,10 +19,12 @@ function saveSettings() {
 
 // Function to Load Saved Settings
 function loadSettings() {
-  if(document.getElementById("currency")){
-  document.getElementById("currency").value = localStorage.getItem("currency") || "USD";
-  document.getElementById("nickname").value = localStorage.getItem("nickname") || "";
-  document.getElementById("job").value = localStorage.getItem("job") || "";
+  if (document.getElementById("currency")) {
+    document.getElementById("currency").value =
+      localStorage.getItem("currency") || "USD";
+    document.getElementById("nickname").value =
+      localStorage.getItem("nickname") || "";
+    document.getElementById("job").value = localStorage.getItem("job") || "";
   }
 }
 // Load settings when page loads
@@ -111,30 +113,53 @@ if (window.location.pathname === "/") {
   let totalIncomings = 0;
   let totalExpensesLastMonth = 0;
   let totalIncomingsLastMonth = 0;
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const currency = localStorage.getItem("currency")
+  const currency = localStorage.getItem("currency");
 
-  document.getElementById("date-period").innerHTML = `*${months[currentMonth]} data`
+  document.getElementById(
+    "date-period"
+  ).innerHTML = `*${months[currentMonth]} data`;
 
   loadData().then((data) => {
     data.forEach((element) => {
-      if (element["transaction"] == "expense" && new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth) {
-
+      if (
+        element["transaction"] == "expense" &&
+        new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth
+      ) {
         labelsUnique[element["Category"]] = 0;
         totalExpenses += Number(element["Amount"]);
-
-      } 
-      else if(element["transaction"] == "incomings" && new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth) {
+      } else if (
+        element["transaction"] == "incomings" &&
+        new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth
+      ) {
         totalIncomings += Number(element["Amount"]);
-      }
-      else if(element["transaction"] == "expense" && new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth-1){
+      } else if (
+        element["transaction"] == "expense" &&
+        new Date(element["Date"].replace(/-/g, "/")).getMonth() ===
+          currentMonth - 1
+      ) {
         // get the last month stadistics
         totalExpensesLastMonth += Number(element["Amount"]);
-
-      }
-      else if(element["transaction"] == "incomings" && new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth-1){
+      } else if (
+        element["transaction"] == "incomings" &&
+        new Date(element["Date"].replace(/-/g, "/")).getMonth() ===
+          currentMonth - 1
+      ) {
         // get the last month stadistics
         totalIncomingsLastMonth += Number(element["Amount"]);
       }
@@ -145,20 +170,23 @@ if (window.location.pathname === "/") {
       let sum = 0;
 
       data.forEach((element) => {
-        if (element["transaction"] == "expense" && element["Category"] == label && new Date(element["Date"].replace(/-/g, "/")).getMonth() === currentMonth ) {
+        if (
+          element["transaction"] == "expense" &&
+          element["Category"] == label &&
+          new Date(element["Date"].replace(/-/g, "/")).getMonth() ===
+            currentMonth
+        ) {
           sum += Number(element["Amount"]);
         }
-
       });
 
-      labelsUnique[label] = ((sum / totalExpenses) * 100);
-
+      labelsUnique[label] = (sum / totalExpenses) * 100;
     });
 
     // generate random colors
     for (let i = 0; i < Object.keys(labelsUnique).length; i++) {
-      let newColor = generateNewColor()
-      if(!donutColors[newColor]){
+      let newColor = generateNewColor();
+      if (!donutColors[newColor]) {
         donutColors.push(generateNewColor());
       }
     }
@@ -198,170 +226,215 @@ if (window.location.pathname === "/") {
       legendItem.innerHTML = `<span style="background-color: ${chartData.datasets[0].backgroundColor[index]};"></span> ${label}`;
       legendContainer.appendChild(legendItem);
     });
-    
+
     // fill the main cards
-    document.getElementById("total-expenses").innerHTML = `${new Intl.NumberFormat(navigator.language, { style: "currency", currency: currency }).format(totalExpenses)}`;
-    document.getElementById("total-incomings").innerHTML = `${new Intl.NumberFormat(navigator.language, {style: "currency", currency: currency}).format(totalIncomings)}`;
+    document.getElementById(
+      "total-expenses"
+    ).innerHTML = `${new Intl.NumberFormat(navigator.language, {
+      style: "currency",
+      currency: currency,
+    }).format(totalExpenses)}`;
+    document.getElementById(
+      "total-incomings"
+    ).innerHTML = `${new Intl.NumberFormat(navigator.language, {
+      style: "currency",
+      currency: currency,
+    }).format(totalIncomings)}`;
     //get the biggest expense
-    let sortedExpensesArray = Object.entries(labelsUnique).sort((a,b) => b[1] - a[1]);
-    document.getElementById("biggest-expense-category").innerHTML = `in ${sortedExpensesArray[0][0]}`;
-    let max = ((Number(sortedExpensesArray[0][1]) * totalExpenses) / 100)
-    document.getElementById("biggest-expense").innerHTML = `${new Intl.NumberFormat(navigator.language, { style: "currency", currency: currency }).format(max)}`;
+    let sortedExpensesArray = Object.entries(labelsUnique).sort(
+      (a, b) => b[1] - a[1]
+    );
+    document.getElementById(
+      "biggest-expense-category"
+    ).innerHTML = `in ${sortedExpensesArray[0][0]}`;
+    let max = (Number(sortedExpensesArray[0][1]) * totalExpenses) / 100;
+    document.getElementById(
+      "biggest-expense"
+    ).innerHTML = `${new Intl.NumberFormat(navigator.language, {
+      style: "currency",
+      currency: currency,
+    }).format(max)}`;
     //get last month stadistics
-    let stadisticsExpenses = 0
-    if(totalExpensesLastMonth > 0){
-    stadisticsExpenses = ((totalExpenses-totalExpensesLastMonth) / totalExpensesLastMonth * 100).toFixed(2);
+    let stadisticsExpenses = 0;
+    if (totalExpensesLastMonth > 0) {
+      stadisticsExpenses = (
+        ((totalExpenses - totalExpensesLastMonth) / totalExpensesLastMonth) *
+        100
+      ).toFixed(2);
     }
-    document.getElementById("stadistics-expenses").innerHTML = `${stadisticsExpenses}% than the previous month`;
+    document.getElementById(
+      "stadistics-expenses"
+    ).innerHTML = `${stadisticsExpenses}% than the previous month`;
     let stadisticsIncomings = 0;
-    if(totalIncomingsLastMonth > 0 ){
-      stadisticsIncomings = ((totalIncomings-totalIncomingsLastMonth) / totalIncomingsLastMonth * 100).toFixed(2);
+    if (totalIncomingsLastMonth > 0) {
+      stadisticsIncomings = (
+        ((totalIncomings - totalIncomingsLastMonth) / totalIncomingsLastMonth) *
+        100
+      ).toFixed(2);
     }
-    document.getElementById("stadistics-incomings").innerHTML = `${stadisticsIncomings}% than the previous month`;
-    
+    document.getElementById(
+      "stadistics-incomings"
+    ).innerHTML = `${stadisticsIncomings}% than the previous month`;
 
     // Init the dictinaries of historical data
     for (let i = 1; i <= 6; i++) {
       let monthIndex = (currentMonth - i + 12) % 12;
       let yearOffset = currentMonth - i < 0 ? -1 : 0;
-      let monthKey = `${currentYear + yearOffset}-${String(monthIndex + 1).padStart(2, "0")}`;
+      let monthKey = `${currentYear + yearOffset}-${String(
+        monthIndex + 1
+      ).padStart(2, "0")}`;
 
       last6monthsExpenses[monthKey] = 0;
       last6monthsIncomings[monthKey] = 0;
     }
 
     // get the sum of each last 6 months
-    data.forEach(element => {
+    data.forEach((element) => {
       let dateObj = new Date(element["Date"].replace(/-/g, "/"));
       let elementMonth = dateObj.getMonth();
       let elementYear = dateObj.getFullYear();
 
-      let monthKey = `${elementYear}-${String(elementMonth + 1).padStart(2, "0")}`;
+      let monthKey = `${elementYear}-${String(elementMonth + 1).padStart(
+        2,
+        "0"
+      )}`;
 
-      if (last6monthsExpenses.hasOwnProperty(monthKey) && element["transaction"] === "expense") {
-          last6monthsExpenses[monthKey] += Number(element["Amount"]);
-      }
-      else if( (last6monthsIncomings.hasOwnProperty(monthKey) && element["transaction"] === "incomings")) {
-          last6monthsIncomings[monthKey] += Number(element["Amount"]);
+      if (
+        last6monthsExpenses.hasOwnProperty(monthKey) &&
+        element["transaction"] === "expense"
+      ) {
+        last6monthsExpenses[monthKey] += Number(element["Amount"]);
+      } else if (
+        last6monthsIncomings.hasOwnProperty(monthKey) &&
+        element["transaction"] === "incomings"
+      ) {
+        last6monthsIncomings[monthKey] += Number(element["Amount"]);
       }
     });
 
     //sort the dic base on the date
-    let sorted6mExpenses = Object.fromEntries(Object.entries(last6monthsExpenses).sort((a,b) => new Date(a[0]) - new Date(b[0])));
-    
-    let sorted6mIncomings = Object.fromEntries(Object.entries(last6monthsIncomings).sort((a,b) => new Date(a[0]) - new Date(b[0])));
-  
-  //linechart option2
+    let sorted6mExpenses = Object.fromEntries(
+      Object.entries(last6monthsExpenses).sort(
+        (a, b) => new Date(a[0]) - new Date(b[0])
+      )
+    );
 
-  // data per moth
-  const dataIncoming = Object.values(sorted6mExpenses);
-  const dataExpenses = Object.values(sorted6mIncomings);
+    let sorted6mIncomings = Object.fromEntries(
+      Object.entries(last6monthsIncomings).sort(
+        (a, b) => new Date(a[0]) - new Date(b[0])
+      )
+    );
 
-  const labelsMix = Object.keys(sorted6mExpenses);
-  const dataMix = {
-    labels: labelsMix,
-    datasets: [
-      {
-        label: "Expenses",
-        data: dataExpenses,
-        borderColor: "rgb(235, 67, 52)",
-        backgroundColor: "rgba(235, 67, 52,0.5)",
-        yAxisID: "y",
-      },
-      {
-        label: "Incomings",
-        data: dataIncoming,
-        borderColor: "rgb(75, 192, 192)",
-        backgroundColor: "rgba(75, 192, 192,0.5)",
-        yAxisID: "y1",
-      },
-    ],
-  };
+    //linechart option2
 
-  // animation for the graph
-  const totalDuration = 5000;
-  const delayBetweenPoints = totalDuration / dataMix.datasets[0].data.length;
-  const previousY = (ctx) =>
-    ctx.index === 0
-      ? ctx.chart.scales.y.getPixelForValue(100)
-      : ctx.chart
-          .getDatasetMeta(ctx.datasetIndex)
-          .data[ctx.index - 1].getProps(["y"], true).y;
-  const animation = {
-    x: {
-      type: "number",
-      easing: "linear",
-      duration: delayBetweenPoints,
-      from: NaN, // the point is initially skipped
-      delay(ctx) {
-        if (ctx.type !== "data" || ctx.xStarted) {
-          return 0;
-        }
-        ctx.xStarted = true;
-        return ctx.index * delayBetweenPoints;
-      },
-    },
-    y: {
-      type: "number",
-      easing: "linear",
-      duration: delayBetweenPoints,
-      from: previousY,
-      delay(ctx) {
-        if (ctx.type !== "data" || ctx.yStarted) {
-          return 0;
-        }
-        ctx.yStarted = true;
-        return ctx.index * delayBetweenPoints;
-      },
-    },
-  };
+    // data per moth
+    const dataIncoming = Object.values(sorted6mExpenses);
+    const dataExpenses = Object.values(sorted6mIncomings);
 
-  //configuration of the graph
-  const configMix = {
-    type: "line",
-    data: dataMix,
-    options: {
-      animation,
-      responsive: true,
-      interaction: {
-        mode: "index",
-        intersect: false,
-      },
-      stacked: false,
-      plugins: {
-        title: {
-          display: true,
-          text: "Incomings vs Expenses",
+    const labelsMix = Object.keys(sorted6mExpenses);
+    const dataMix = {
+      labels: labelsMix,
+      datasets: [
+        {
+          label: "Expenses",
+          data: dataExpenses,
+          borderColor: "rgb(235, 67, 52)",
+          backgroundColor: "rgba(235, 67, 52,0.5)",
+          yAxisID: "y",
+        },
+        {
+          label: "Incomings",
+          data: dataIncoming,
+          borderColor: "rgb(75, 192, 192)",
+          backgroundColor: "rgba(75, 192, 192,0.5)",
+          yAxisID: "y1",
+        },
+      ],
+    };
+
+    // animation for the graph
+    const totalDuration = 5000;
+    const delayBetweenPoints = totalDuration / dataMix.datasets[0].data.length;
+    const previousY = (ctx) =>
+      ctx.index === 0
+        ? ctx.chart.scales.y.getPixelForValue(100)
+        : ctx.chart
+            .getDatasetMeta(ctx.datasetIndex)
+            .data[ctx.index - 1].getProps(["y"], true).y;
+    const animation = {
+      x: {
+        type: "number",
+        easing: "linear",
+        duration: delayBetweenPoints,
+        from: NaN, // the point is initially skipped
+        delay(ctx) {
+          if (ctx.type !== "data" || ctx.xStarted) {
+            return 0;
+          }
+          ctx.xStarted = true;
+          return ctx.index * delayBetweenPoints;
         },
       },
-      scales: {
-        y: {
-          type: "linear",
-          display: true,
-          position: "left",
+      y: {
+        type: "number",
+        easing: "linear",
+        duration: delayBetweenPoints,
+        from: previousY,
+        delay(ctx) {
+          if (ctx.type !== "data" || ctx.yStarted) {
+            return 0;
+          }
+          ctx.yStarted = true;
+          return ctx.index * delayBetweenPoints;
         },
-        y1: {
-          type: "linear",
-          display: true,
-          position: "right",
+      },
+    };
 
-          // grid line settings
-          grid: {
-            drawOnChartArea: false, // only want the grid lines for one axis to show up
+    //configuration of the graph
+    const configMix = {
+      type: "line",
+      data: dataMix,
+      options: {
+        animation,
+        responsive: true,
+        interaction: {
+          mode: "index",
+          intersect: false,
+        },
+        stacked: false,
+        plugins: {
+          title: {
+            display: true,
+            text: "Incomings vs Expenses",
+          },
+        },
+        scales: {
+          y: {
+            type: "linear",
+            display: true,
+            position: "left",
+          },
+          y1: {
+            type: "linear",
+            display: true,
+            position: "right",
+
+            // grid line settings
+            grid: {
+              drawOnChartArea: false, // only want the grid lines for one axis to show up
+            },
           },
         },
       },
-    },
-  };
-  // render the graph
-  const myChartMix = new Chart(
-    document.getElementById("myChartMix"),
-    configMix
-  );
-  // resize canvas
-  window.addEventListener("resize", () => {
-    myChartMix.resize();
+    };
+    // render the graph
+    const myChartMix = new Chart(
+      document.getElementById("myChartMix"),
+      configMix
+    );
+    // resize canvas
+    window.addEventListener("resize", () => {
+      myChartMix.resize();
+    });
   });
-
-});
 }
