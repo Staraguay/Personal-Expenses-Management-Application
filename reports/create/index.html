@@ -17,7 +17,7 @@
 
     <script type="module" src="../../assets/js/global.js"></script>
     <script type="module" src="../../assets/js/reports/create/main.js"></script>
-    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/reports/create/styles.css" />
 
     <title>Create Report | Personal Expenses Management Application</title>
   </head>
@@ -183,12 +183,12 @@
 
               <div class="form-group">
                 <label for="inputAmount">Price</label>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
+                <div class="input-group">
+                  <div class="input-group-prepend mt-5px">
                     <div class="input-group-text">CAD</div>
                   </div>
                   <input
-                    name="price"
+                    name="amount"
                     type="number"
                     class="form-control"
                     id="inputAmount"
@@ -221,7 +221,7 @@
               <div class="form-group">
                 <label for="inputPayment">Payment type</label>
                 <select
-                  name="paymentType"
+                  name="transaction"
                   id="inputPayment"
                   class="form-select"
                   aria-label="Default select example"
@@ -242,7 +242,9 @@
               >
                 Submit
               </button>
-              <a class="btn btn-danger link-opacity-100" href="/reports/">Back to list</a>
+              <a class="btn btn-danger link-opacity-100" href="/reports/"
+                >Back to list</a
+              >
             </div>
           </form>
         </div>
