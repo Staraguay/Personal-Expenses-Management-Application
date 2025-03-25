@@ -163,38 +163,34 @@ canvas {
     width: 100%;
 }
 .legend {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     margin-top: 20px;
-    justify-content: center;
-    align-content: center;
-    padding-left: 25px;
+    padding-left: 35px;
 }
 .legend div {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.legend span {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-}
 
 .legend-child{
 
-    width: calc(50% - 10px);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     
 }
 
 .legend-child span{
 
-    width: 50px;
+    width: 30px;
     height: 30px;
 
 }
 
+/* CSS FOR DATATABLES */
+th, td{
+    text-align: center!important;
+}
 
 /******* media querys *********/
