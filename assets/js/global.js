@@ -1,3 +1,5 @@
+import { initialize } from "./libs/initializeMockData.js";
+
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("global.js loaded");
+  initialize();
 });
