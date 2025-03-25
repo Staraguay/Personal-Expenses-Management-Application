@@ -1,4 +1,4 @@
-import { getLocalStorageData } from "../libs/initializeMockData";
+import { getLocalStorageData } from "../libs/initializeMockData.js";
 
 const setDataToList = () => {
   const listElement = $("#list-transaction");
