@@ -141,30 +141,6 @@
           </li>
         </ul>
         <hr />
-        <div class="dropdown">
-          <a
-            href="#"
-            class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="https://github.com/mdo.png"
-              alt=""
-              width="32"
-              height="32"
-              class="rounded-circle me-2"
-            />
-            <strong>mdo</strong>
-          </a>
-          <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
       </div>
 
       <div class="container mt-5 px-5">
@@ -173,35 +149,39 @@
         </div>
         <div>
           <h1>Dashboard</h1>
+          <span style="color: #727272;" id="date-period"></span>
         </div>
         <div class="d-flex justify-content-between flex-wrap row-gap-2 mt-5">
           <div class="card dashboard-card">
             <div class="card-body">
-              <h5 class="card-title">Total expended amount</h5>
-              <h3 class="card-money">$2.305</h3>
-              <div class="card-text-label">+20% more than the previous month</div>
+              <h5 class="card-title">Total spent this month</h5>
+              <h3 class="card-money" id="total-expenses"></h3>
+              <div class="card-text-label" id="stadistics-expenses"></div>
             </div>
           </div>
           <div class="card dashboard-card">
             <div class="card-body">
-              <h5 class="card-title">Money received</h5>
-              <h3 class="card-money">$2.305</h3>
-              <div class="card-text-label">+20% more than the previous month</div>
+              <h5 class="card-title">Money received this month</h5>
+              <h3 class="card-money" id="total-incomings"></h3>
+              <div class="card-text-label" id="stadistics-incomings"></div>
             </div>
           </div>
           <div class="card dashboard-card">
             <div class="card-body">
-              <h5 class="card-title">Shopping</h5>
-              <h3 class="card-money">$2.305</h3>
-              <div class="card-text-label">+33% more than the previous month</div>
+              <h5 class="card-title">The biggest expense is</h5>
+              <h3 class="card-money" id="biggest-expense"></h3>
+              <div class="card-text-label" id="biggest-expense-category"></div>
             </div>
           </div>
         </div>
-        <div id="donutGraph" class="container mt-5 mb-5 d-flex flex-direction-column flex-wrap row-gap-2 justify-content-center">
-          <div>
+        <br>
+        <hr>
+        <h3 class="text-center">Distribution of Expenses</h3>
+        <div id="donutGraph" class="container mt-5 mb-5 row">
+          <div class="col-4">
             <canvas id="myChart"></canvas>
           </div>
-          <div class="legend d-flex " id="chartLegend"></div>
+          <div class="legend col-8" id="chartLegend"></div>
         </div>
         <br>
         <hr>
