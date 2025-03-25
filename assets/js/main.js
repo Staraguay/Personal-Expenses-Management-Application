@@ -1,3 +1,4 @@
+import { getLocalStorageData } from "./libs/initializeMockData.js";
 // Function to Save Settings
 function saveSettings() {
   const currency = document.getElementById("currency").value;
