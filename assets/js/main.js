@@ -105,7 +105,10 @@ if (
   ];
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const currency = localStorage.getItem("currency");
+  let currency = localStorage.getItem("currency");
+  if(!currency){
+    currency = "USD";
+  }
 
   document.getElementById(
     "date-period"
