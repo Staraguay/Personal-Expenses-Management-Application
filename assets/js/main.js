@@ -18,6 +18,14 @@ function saveSettings() {
   }, 2000);
 }
 
+//add event listener to settings button
+const btnForm = document.getElementById("settingsBtn");
+if(btnForm){
+  btnForm.addEventListener("click", saveSettings);
+}
+
+
+
 // Function to Load Saved Settings
 function loadSettings() {
   if (document.getElementById("currency")) {
@@ -69,7 +77,6 @@ function generateNewColor() {
 }
 
 // Render the donut graph in the dashboard
-console.log(window.location.pathname);
 if (
   window.location.pathname === "/" ||
   window.location.pathname === "/index.html"

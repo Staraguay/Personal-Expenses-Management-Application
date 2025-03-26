@@ -35,7 +35,7 @@
     />
 
     <script type="module" src="../assets/js/global.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/main.js"></script>
     <link rel="stylesheet" href="../assets/css/styles.css" />
 
     <title>Configurations | Personal Expenses Management Application</title>
@@ -187,7 +187,7 @@
               <label for="job">Job Title:</label>
               <input type="text" id="job" placeholder="Enter your job">
   
-              <button type="button" class="btn btn-primary mt-3 align-center" onclick="saveSettings()">Save Settings</button>
+              <button type="button" class="btn btn-primary mt-3 align-center" id="settingsBtn">Save Settings</button>
           </form>
           <p id="savedMessage" style="color: green; display: none;">✅ Settings Saved!</p>
         </div>
