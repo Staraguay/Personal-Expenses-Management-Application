@@ -18,6 +18,7 @@
     <script type="module" src="../../assets/js/global.js"></script>
     <script type="module" src="../../assets/js/reports/edit/main.js"></script>
     <link rel="stylesheet" href="../../assets/css/reports/edit/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/reports/libs/common.css" />
 
     <title>Create Report | Personal Expenses Management Application</title>
   </head>
@@ -229,7 +230,7 @@
                 <label for="amountInput">Price</label>
                 <div class="input-group">
                   <div class="input-group-prepend mt-5px">
-                    <div class="input-group-text">CAD</div>
+                    <div id="currency" class="input-group-text">CAD</div>
                   </div>
                   <input
                     name="amount"
@@ -278,13 +279,13 @@
             <div class="d-flex gap-3 align-items-center">
               <button
                 type="button"
-                class="btn btn-success"
+                class="btn btn-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
                 Submit
               </button>
-              <a class="btn btn-danger link-opacity-100" href="/reports/"
+              <a class="btn btn-outline-primary" href="/reports/"
                 >Back to list</a
               >
             </div>
@@ -316,7 +317,7 @@
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-danger"
+                  class="btn btn-outline-primary"
                   data-bs-dismiss="modal"
                 >
                   Cancel
@@ -324,7 +325,7 @@
                 <button
                   type="submit"
                   form="form-create"
-                  class="btn btn-success"
+                  class="btn btn-primary"
                 >
                   Create
                 </button>

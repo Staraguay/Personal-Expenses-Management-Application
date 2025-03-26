@@ -1,6 +1,11 @@
 import Toast from "../../libs/Toast.js";
 import { getLocalStorageData } from "../../libs/initializeMockData.js";
-import { TYPE, switchCategoryType, trackTransaction } from "../libs/common.js";
+import {
+  TYPE,
+  switchCategoryType,
+  trackTransaction,
+  handleCurrency,
+} from "../libs/common.js";
 
 let reportId = null;
 
@@ -98,6 +103,7 @@ const initialize = () => {
   }
 
   trackTransaction();
+  handleCurrency();
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
