@@ -1,6 +1,8 @@
 import Toast from "../../libs/Toast.js";
 import { getLocalStorageData } from "../../libs/initializeMockData.js";
 
+let reportId = null;
+
 const TYPE = {
   income: "incoming",
   expense: "expense",
@@ -38,20 +40,19 @@ const submit = (e) => {
   const array = localStorage.getItem("reportData");
 
   if (array) {
-    const reportData = JSON.parse(array);
-
-    const ids = reportData.map((item) => {
-      return Number(item.id);
-    });
-    const latestId = Math.max(...ids);
-
     const data = {
-      id: `${latestId + 1}`,
+      id: `${reportId}`,
       ...formValues,
     };
 
-    const newData = [...reportData, data];
-    localStorage.setItem("reportData", JSON.stringify(newData));
+    const reportData = JSON.parse(array);
+    const newReportData = reportData.map((item) => {
+      if (item.id === data.id) {
+        return data;
+      }
+      return item;
+    });
+    localStorage.setItem("reportData", JSON.stringify(newReportData));
   } else {
     const reportData = [formValues];
     localStorage.setItem("reportData", JSON.stringify(reportData));
@@ -75,9 +76,10 @@ const getUrlParamsId = () => {
 };
 
 const initialize = () => {
-  const id = getUrlParamsId();
+  reportId = getUrlParamsId();
+
   const items = getLocalStorageData();
-  const targetItem = items.find((item) => item.id === id);
+  const targetItem = items.find((item) => item.id === reportId);
 
   const nameElement = document.getElementById("nameInput");
   const categoryElement = document.getElementById("categorySelect");
