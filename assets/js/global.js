@@ -1,5 +1,9 @@
 import { initialize } from "./libs/initializeMockData.js";
+import { afterInitEvent } from "./main.js";
+window.addEventListener("DOMContentLoaded", async (event) => {
 
-window.addEventListener("DOMContentLoaded", (event) => {
-  initialize();
+  await initialize();
+  window.dispatchEvent(afterInitEvent)
+
+
 });
