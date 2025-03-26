@@ -69,7 +69,6 @@ function generateNewColor() {
 }
 
 // Render the donut graph in the dashboard
-console.log(window.location.pathname);
 if (
   window.location.pathname === "/" ||
   window.location.pathname === "/index.html"
