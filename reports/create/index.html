@@ -147,12 +147,81 @@
                 <select
                   name="category"
                   class="form-select"
+                  id="categorySelect"
                   aria-label="Default select example"
                 >
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option value="0">Open this select menu</option>
+                  <option data-category-type="incoming" value="salary">
+                    salary
+                  </option>
+                  <option data-category-type="incoming" value="freelance">
+                    freelance
+                  </option>
+                  <option data-category-type="incoming" value="investment">
+                    investment
+                  </option>
+                  <option data-category-type="incoming" value="bonus">
+                    bonus
+                  </option>
+                  <option data-category-type="incoming" value="gift">
+                    gift
+                  </option>
+                  <option data-category-type="expense" value="grocery">
+                    grocery
+                  </option>
+                  <option data-category-type="expense" value="transport">
+                    transport
+                  </option>
+                  <option data-category-type="expense" value="rent">
+                    rent
+                  </option>
+                  <option data-category-type="expense" value="entertainment">
+                    entertainment
+                  </option>
+                  <option data-category-type="expense" value="dining">
+                    dining
+                  </option>
+                  <option data-category-type="expense" value="utilities">
+                    utilities
+                  </option>
+                  <option data-category-type="expense" value="snacks">
+                    snacks
+                  </option>
+                  <option data-category-type="expense" value="shopping">
+                    shopping
+                  </option>
+                  <option data-category-type="expense" value="gas">gas</option>
+                  <option data-category-type="expense" value="subscription">
+                    subscription
+                  </option>
+                  <option data-category-type="expense" value="medical">
+                    medical
+                  </option>
+                  <option data-category-type="expense" value="clothing">
+                    clothing
+                  </option>
+                  <option data-category-type="expense" value="coffee">
+                    coffee
+                  </option>
+                  <option data-category-type="expense" value="electronics">
+                    electronics
+                  </option>
+                  <option data-category-type="expense" value="books">
+                    books
+                  </option>
+                  <option data-category-type="expense" value="pets">
+                    pets
+                  </option>
+                  <option data-category-type="expense" value="gym">gym</option>
+                  <option data-category-type="expense" value="car repair">
+                    car repair
+                  </option>
+                  <option data-category-type="expense" value="charity">
+                    charity
+                  </option>
+                  <option data-category-type="expense" value="education">
+                    education
+                  </option>
                 </select>
               </div>
 
@@ -194,17 +263,15 @@
                 />
               </div>
               <div class="form-group">
-                <label for="inputPayment">Payment type</label>
+                <label for="transactionSelect">Transaction Type</label>
                 <select
                   name="transaction"
-                  id="inputPayment"
+                  id="transactionSelect"
                   class="form-select"
                   aria-label="Default select example"
                 >
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option selected value="expense">expense</option>
+                  <option value="incomings">Incomings</option>
                 </select>
               </div>
             </div>
