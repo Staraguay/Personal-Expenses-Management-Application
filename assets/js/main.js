@@ -69,7 +69,11 @@ function generateNewColor() {
 }
 
 // Render the donut graph in the dashboard
-if (window.location.pathname === "/") {
+console.log(window.location.pathname);
+if (
+  window.location.pathname === "/" ||
+  window.location.pathname === "/index.html"
+) {
   let labelsUnique = {};
   let last6monthsExpenses = {};
   let last6monthsIncomings = {};
