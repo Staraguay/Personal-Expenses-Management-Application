@@ -4,6 +4,9 @@
 
 ## Students
 Sergio Ivan Vera Barreto CT1010201
+Tohru Yaginuma CT1010705
+Sebastian Taraguya CT1007832
+Valeria Osorio Rios CT1010695
 =======
 # Personal Expense Management Application
 
