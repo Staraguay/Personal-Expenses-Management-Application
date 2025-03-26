@@ -1,5 +1,10 @@
 import Toast from "../../libs/Toast.js";
-import { TYPE, switchCategoryType, trackTransaction } from "../libs/common.js";
+import {
+  TYPE,
+  switchCategoryType,
+  trackTransaction,
+  handleCurrency,
+} from "../libs/common.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
   const toastTrigger = document.getElementById("liveToastBtn");
@@ -71,4 +76,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   switchCategoryType(TYPE.expense);
   trackTransaction();
+  handleCurrency();
 });

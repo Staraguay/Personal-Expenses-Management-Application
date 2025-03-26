@@ -34,3 +34,9 @@ export const trackTransaction = () => {
     switchCategoryType(value);
   });
 };
+
+export const handleCurrency = () => {
+  const currencySetting = localStorage.getItem("currency");
+  const currencyElement = document.getElementById("currency");
+  currencyElement.textContent = currencySetting;
+};
