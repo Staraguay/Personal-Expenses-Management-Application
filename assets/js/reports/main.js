@@ -5,7 +5,7 @@ const setDataToList = () => {
   const items = getLocalStorageData();
 
   listElement.DataTable({
-    order: [[3, "desc"]],
+    order: [[5, "desc"]],
     data: items,
     lengthMenu: [
       [10, 25, 50, 100, -1],
