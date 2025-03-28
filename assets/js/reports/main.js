@@ -16,10 +16,19 @@ const setDataToList = () => {
       { data: "id" },
       { data: "name" },
       { data: "transaction" },
-      { data: "amount" },
       { data: "category" },
+      { data: "amount" },
       { data: "date" },
       { data: "shop" },
+      {
+        data: null,
+      render: (data, type, row) => {
+        // Create a dynamic link using the row ID
+        const editLink = `/reports/edit/?id=${row.id}`;
+          return `<a class='btn btn-outline-primary' href='${editLink}'>Edit</a>`;
+        },
+      },
+      
     ],
   });
 };
