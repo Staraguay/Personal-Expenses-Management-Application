@@ -1,5 +1,7 @@
 [
   {
+    
+    "shop" : "Walmart",
     "id": "1",
     "transaction": "expense",
     "amount": "100",
@@ -7,6 +9,8 @@
     "date": "2025-03-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "2",
     "transaction": "expense",
     "amount": "50",
@@ -14,6 +18,8 @@
     "date": "2025-03-02"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "3",
     "transaction": "expense",
     "amount": "200",
@@ -21,6 +27,8 @@
     "date": "2025-03-03"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "4",
     "transaction": "expense",
     "amount": "30",
@@ -28,6 +36,8 @@
     "date": "2025-03-04"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "5",
     "transaction": "expense",
     "amount": "80",
@@ -35,6 +45,8 @@
     "date": "2025-03-05"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "6",
     "transaction": "expense",
     "amount": "120",
@@ -42,6 +54,8 @@
     "date": "2025-02-06"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "7",
     "transaction": "expense",
     "amount": "15",
@@ -49,6 +63,8 @@
     "date": "2025-02-07"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "8",
     "transaction": "expense",
     "amount": "300",
@@ -56,6 +72,8 @@
     "date": "2025-02-08"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "9",
     "transaction": "expense",
     "amount": "60",
@@ -63,6 +81,8 @@
     "date": "2025-02-09"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "10",
     "transaction": "expense",
     "amount": "40",
@@ -70,6 +90,8 @@
     "date": "2025-02-10"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "11",
     "transaction": "expense",
     "amount": "250",
@@ -77,6 +99,8 @@
     "date": "2025-01-11"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "12",
     "transaction": "expense",
     "amount": "90",
@@ -84,6 +108,8 @@
     "date": "2025-01-12"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "13",
     "transaction": "expense",
     "amount": "35",
@@ -91,6 +117,8 @@
     "date": "2025-01-13"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "14",
     "transaction": "expense",
     "amount": "110",
@@ -98,6 +126,8 @@
     "date": "2025-01-14"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "15",
     "transaction": "expense",
     "amount": "75",
@@ -105,6 +135,8 @@
     "date": "2025-01-15"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "16",
     "transaction": "expense",
     "amount": "95",
@@ -112,6 +144,8 @@
     "date": "2024-12-16"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "17",
     "transaction": "expense",
     "amount": "45",
@@ -119,6 +153,8 @@
     "date": "2024-12-17"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "18",
     "transaction": "expense",
     "amount": "500",
@@ -126,6 +162,8 @@
     "date": "2024-12-18"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "19",
     "transaction": "expense",
     "amount": "55",
@@ -133,6 +171,8 @@
     "date": "2024-12-19"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "20",
     "transaction": "expense",
     "amount": "20",
@@ -140,6 +180,8 @@
     "date": "2024-12-20"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "21",
     "transaction": "expense",
     "amount": "400",
@@ -147,6 +189,8 @@
     "date": "2024-11-21"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "22",
     "transaction": "expense",
     "amount": "85",
@@ -154,6 +198,8 @@
     "date": "2024-11-22"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "23",
     "transaction": "expense",
     "amount": "10",
@@ -161,6 +207,8 @@
     "date": "2024-11-23"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "24",
     "transaction": "expense",
     "amount": "95",
@@ -168,6 +216,8 @@
     "date": "2024-11-24"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "25",
     "transaction": "expense",
     "amount": "150",
@@ -175,6 +225,8 @@
     "date": "2024-11-25"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "26",
     "transaction": "incomings",
     "amount": "500",
@@ -182,6 +234,8 @@
     "date": "2024-09-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "27",
     "transaction": "incomings",
     "amount": "200",
@@ -189,6 +243,8 @@
     "date": "2024-09-05"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "28",
     "transaction": "incomings",
     "amount": "150",
@@ -196,6 +252,8 @@
     "date": "2024-09-10"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "29",
     "transaction": "incomings",
     "amount": "50",
@@ -203,6 +261,8 @@
     "date": "2024-09-15"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "30",
     "transaction": "incomings",
     "amount": "300",
@@ -210,6 +270,8 @@
     "date": "2024-09-20"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "31",
     "transaction": "incomings",
     "amount": "450",
@@ -217,6 +279,8 @@
     "date": "2024-10-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "32",
     "transaction": "incomings",
     "amount": "220",
@@ -224,6 +288,8 @@
     "date": "2024-10-06"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "33",
     "transaction": "incomings",
     "amount": "130",
@@ -231,6 +297,8 @@
     "date": "2024-10-11"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "34",
     "transaction": "incomings",
     "amount": "70",
@@ -238,6 +306,8 @@
     "date": "2024-10-16"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "35",
     "transaction": "incomings",
     "amount": "500",
@@ -245,6 +315,8 @@
     "date": "2024-11-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "36",
     "transaction": "incomings",
     "amount": "300",
@@ -252,6 +324,8 @@
     "date": "2024-11-07"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "37",
     "transaction": "incomings",
     "amount": "160",
@@ -259,6 +333,8 @@
     "date": "2024-11-12"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "38",
     "transaction": "incomings",
     "amount": "40",
@@ -266,6 +342,8 @@
     "date": "2024-11-17"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "39",
     "transaction": "incomings",
     "amount": "600",
@@ -273,6 +351,8 @@
     "date": "2024-12-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "40",
     "transaction": "incomings",
     "amount": "250",
@@ -280,6 +360,8 @@
     "date": "2024-12-08"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "41",
     "transaction": "incomings",
     "amount": "200",
@@ -287,6 +369,8 @@
     "date": "2024-12-13"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "42",
     "transaction": "incomings",
     "amount": "90",
@@ -294,6 +378,8 @@
     "date": "2024-12-18"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "43",
     "transaction": "incomings",
     "amount": "700",
@@ -301,6 +387,8 @@
     "date": "2025-01-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "44",
     "transaction": "incomings",
     "amount": "280",
@@ -308,6 +396,8 @@
     "date": "2025-01-09"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "45",
     "transaction": "incomings",
     "amount": "180",
@@ -315,6 +405,8 @@
     "date": "2025-01-14"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "46",
     "transaction": "incomings",
     "amount": "50",
@@ -322,6 +414,8 @@
     "date": "2025-01-19"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "47",
     "transaction": "incomings",
     "amount": "750",
@@ -329,6 +423,8 @@
     "date": "2025-02-01"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "48",
     "transaction": "incomings",
     "amount": "300",
@@ -336,6 +432,8 @@
     "date": "2025-02-10"
   },
   {
+    
+    "shop" : "Walmart",
     "id": "49",
     "transaction": "incomings",
     "amount": "210",
@@ -344,6 +442,8 @@
   },
   {
     "id": "50",
+    "shop" : "Walmart",
+    "name" : "Walmart",
     "transaction": "incomings",
     "amount": "120",
     "category": "gift",
