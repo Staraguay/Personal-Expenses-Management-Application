@@ -17,7 +17,15 @@ const setDataToList = () => {
       { data: "name" },
       { data: "transaction" },
       { data: "category" },
-      { data: "amount" },
+      { data: "amount", render: (data, type, row) =>{
+
+        let currencySetting = localStorage.getItem("currency");
+        if (!currencySetting) {
+          currencySetting = "USD";
+        }
+        return `${new Intl.NumberFormat(navigator.language, {style: "currency", currency: currencySetting,}).format(data)}`
+        } 
+      },
       { data: "date" },
       { data: "shop" },
       {

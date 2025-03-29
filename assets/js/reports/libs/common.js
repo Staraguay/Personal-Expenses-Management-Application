@@ -38,5 +38,5 @@ export const trackTransaction = () => {
 export const handleCurrency = () => {
   const currencySetting = localStorage.getItem("currency");
   const currencyElement = document.getElementById("currency");
-  currencyElement.textContent = currencySetting;
+  currencyElement.innerHTML = currencySetting ? currencyElement.innerHTML = currencySetting :  "USD";
 };
