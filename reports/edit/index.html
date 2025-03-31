@@ -127,9 +127,9 @@
       </div>
 
       <div class="p-4 container">
-        <h1>Report Create Page</h1>
+        <h1>Report edit Page</h1>
         <div class="p-5">
-          <form id="form-create" class="d-flex flex-column gap-4">
+          <form id="form-edit" class="d-flex flex-column gap-4">
             <div class="d-flex flex-column gap-3">
               <div class="form-group">
                 <label for="nameInput">Name</label>
@@ -282,7 +282,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
-                Submit
+                Save
               </button>
               <a class="btn btn-outline-primary" href="/reports/"
                 >Back to list</a
@@ -303,7 +303,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Create Report
+                  Edit Report
                 </h1>
                 <button
                   type="button"
@@ -312,7 +312,7 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">Are you sure to create report?</div>
+              <div class="modal-body">Are you sure to edit this report?</div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -323,10 +323,10 @@
                 </button>
                 <button
                   type="submit"
-                  form="form-create"
+                  form="form-edit"
                   class="btn btn-primary"
                 >
-                  Create
+                  Yes
                 </button>
               </div>
             </div>
@@ -342,12 +342,12 @@
             aria-live="assertive"
             aria-atomic="true"
           >
-            <div class="toast-body d-flex justify-content-between">
-              <span>New Report has been created successfully!</span>
+            <div class="toast-body text-bg-success d-flex justify-content-between">
+              <span>Report edited successfully!</span>
 
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close btn-close-white"
                 data-bs-dismiss="toast"
                 aria-label="Close"
               ></button>

@@ -7,6 +7,10 @@ body {
     color: #333; /* Dark gray text */
 }
 
+h1{
+    font-size: 4rem;
+}
+
 /* Sidebar Styles */
 .sidebar {
     width: 250px;
