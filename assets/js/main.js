@@ -119,6 +119,14 @@ window.addEventListener('afterInitEvent', ()=> {
       document.getElementById(
         "date-period"
       ).innerHTML = `*${months[currentMonth]} data`;
+      let nickname = document.getElementById("nickname");
+      let jobTitle = document.getElementById("job");
+      const savedNickname = localStorage.getItem("nickname");
+      const savedJob = localStorage.getItem("job");
+
+      savedNickname ? nickname.innerHTML = ` ${savedNickname}` : "";
+      savedJob ? jobTitle.innerHTML = `-${savedJob}` : "";
+
 
       const data = getLocalStorageData();
       data.forEach((element) => {

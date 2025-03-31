@@ -7,7 +7,16 @@ import {
   handleCurrency,
 } from "../libs/common.js";
 
-let reportId = null;
+window.addEventListener("DOMContentLoaded", (event) => {
+  const toastTrigger = document.getElementById("liveToastBtn");
+  const toastLiveExample = document.getElementById("liveToast");
+
+  // Get the modal element
+  const modalElement = document.getElementById("exampleModal");
+  // Create a Bootstrap modal instance
+  const modalInstance = new bootstrap.Modal(modalElement);
+
+  let reportId = null;
 
 const submit = (e) => {
   e.preventDefault();
@@ -15,10 +24,6 @@ const submit = (e) => {
   const toast = new Toast({
     toastId: "liveToast",
   });
-  // Get the modal element
-  const modalElement = document.getElementById("exampleModal");
-  // Create a Bootstrap modal instance
-  const modalInstance = new bootstrap.Modal(modalElement);
   const formData = new FormData(e.target);
 
   const name = formData.get("name");
@@ -59,8 +64,8 @@ const submit = (e) => {
     localStorage.setItem("reportData", JSON.stringify(reportData));
   }
 
-  modalInstance.hide();
   toast.show();
+  modalInstance.hide();
 };
 
 const getUrlParamsId = () => {
@@ -106,10 +111,6 @@ const initialize = () => {
   handleCurrency();
 };
 
-window.addEventListener("DOMContentLoaded", (event) => {
-  const toastTrigger = document.getElementById("liveToastBtn");
-  const toastLiveExample = document.getElementById("liveToast");
-
   if (toastTrigger) {
     const toastBootstrap =
       bootstrap.Toast.getOrCreateInstance(toastLiveExample);
@@ -120,6 +121,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   initialize();
 
-  const form = document.getElementById("form-create");
+  const form = document.getElementById("form-edit");
   form.addEventListener("submit", submit);
 });

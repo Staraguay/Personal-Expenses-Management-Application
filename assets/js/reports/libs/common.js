@@ -1,5 +1,5 @@
 export const TYPE = {
-  income: "incoming",
+  income: "incomings",
   expense: "expense",
 };
 
