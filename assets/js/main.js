@@ -125,7 +125,7 @@ window.addEventListener("afterInitEvent", () => {
 
     savedNickname ? (nickname.innerHTML = ` ${savedNickname}`) : "";
     savedJob ? (jobTitle.innerHTML = `-${savedJob}`) : "";
-    console.log(getLocalStorageData().length);
+
     if (getLocalStorageData().length > 0) {
       const data = getLocalStorageData();
       data.forEach((element) => {
