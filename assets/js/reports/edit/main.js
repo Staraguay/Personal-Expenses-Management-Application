@@ -143,9 +143,9 @@ const initialize = () => {
   initialize();
 
   const form = document.getElementById("form-edit");
-  const delete = document.getElementById("delete");
+  const deleteRecord = document.getElementById("delete");
   form.addEventListener("submit", submit);
-  delete.addEventListener("submit", (e) => {
+  deleteRecord.addEventListener("click", (e) => {
     deleteReportById(e, reportId);
   });
 });
