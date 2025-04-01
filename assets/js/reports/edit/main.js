@@ -66,6 +66,9 @@ const submit = (e) => {
 
   toast.show();
   modalInstance.hide();
+  setTimeout(() => {
+    window.location.replace("/reports/");
+  }, 2000);   
 };
 
 const getUrlParamsId = () => {

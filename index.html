@@ -190,11 +190,39 @@
         <br>
         <h3 class="text-center">History in the past 6 months</h3>
         <div class="container mt-5 mb-5 d-flex" id="chartMix">
-          <div class="container">
+          <div id="chartID" class="container">
             <canvas id="myChartMix"></canvas>
           </div>
         </div>
       </div>
+      <!--Modal to upload file-->
+      <div
+          class="modal fade"
+          id="JSONmodal"
+          tabindex="-1"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Please upload your JSON file with your records
+                </h1>
+              </div>
+              
+              <div class="text-center mt-3 mb-3">
+                <input id="inputJSON" type="file" accept=".json" class="btn btn-outline-primary" value="Load file" style="width: fit-content;">
+              </div>
+              <div class="hr-text">OR</div>
+              <div class="text-center mb-4">
+                <button id="scratch" class="btn btn-primary">Start from scratch</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
   </body>
 </html>
