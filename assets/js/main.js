@@ -2,10 +2,6 @@ import { getLocalStorageData } from "./libs/initializeMockData.js";
 
 export const afterInitEvent = new Event("afterInitEvent");
 
-window.addEventListener('afterInitEvent', ()=> {
-  
-
- 
     // Function to Save Settings
     function saveSettings() {
       const currency = document.getElementById("currency").value;
@@ -44,10 +40,16 @@ window.addEventListener('afterInitEvent', ()=> {
     }
     // Load settings when page loads
     window.addEventListener("DOMContentLoaded", (event) => {
-      loadSettings();
+      if(window.location.pathname === "/configurations/"){
+        loadSettings();
+      };
     });
 
-    // color variables
+window.addEventListener('afterInitEvent', ()=> {
+  
+
+ 
+     // color variables
 
     const firstColor = getComputedStyle(document.documentElement)
       .getPropertyValue("--first-color")
