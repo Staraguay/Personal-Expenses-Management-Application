@@ -132,6 +132,18 @@
           <form id="form-create" class="d-flex flex-column gap-4">
             <div class="d-flex flex-column gap-3">
               <div class="form-group">
+                <label for="transactionSelect">Transaction Type</label>
+                <select
+                  name="transaction"
+                  id="transactionSelect"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option selected value="expense">expense</option>
+                  <option value="incomings">Incomings</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="nameInput">Name</label>
                 <input
                   name="name"
@@ -262,18 +274,7 @@
                   placeholder="Awesome shop"
                 />
               </div>
-              <div class="form-group">
-                <label for="transactionSelect">Transaction Type</label>
-                <select
-                  name="transaction"
-                  id="transactionSelect"
-                  class="form-select"
-                  aria-label="Default select example"
-                >
-                  <option selected value="expense">expense</option>
-                  <option value="incomings">Incomings</option>
-                </select>
-              </div>
+              
             </div>
             <div class="d-flex gap-3 align-items-center">
               <button

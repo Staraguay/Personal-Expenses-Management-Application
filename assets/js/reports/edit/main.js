@@ -12,9 +12,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const toastLiveExample = document.getElementById("liveToast");
 
   // Get the modal element
-  const modalElement = document.getElementById("exampleModal");
+  const modalElement = document.getElementById("ModalSave");
+  const modalElementDelete = document.getElementById("ModalDelete");
   // Create a Bootstrap modal instance
   const modalInstance = new bootstrap.Modal(modalElement);
+  const modalInstanceDelete = new bootstrap.Modal(modalElementDelete);
 
   let reportId = null;
 
@@ -81,6 +83,25 @@ const getUrlParamsId = () => {
   return id;
 };
 
+const deleteReportById = (e, id) => {
+  e.preventDefault();
+  const toast = new Toast({
+    toastId: "liveToast",
+  });
+  const array = localStorage.getItem("reportData");
+  
+  if (array) {
+    const reportData = JSON.parse(array);
+    const newReportData = reportData.filter((item) => item.id !== id);
+    localStorage.setItem("reportData", JSON.stringify(newReportData));
+    
+    
+  }
+  toast.show();
+  modalInstanceDelete.hide();
+};
+
+
 const initialize = () => {
   reportId = getUrlParamsId();
 
@@ -122,5 +143,9 @@ const initialize = () => {
   initialize();
 
   const form = document.getElementById("form-edit");
+  const delete = document.getElementById("delete");
   form.addEventListener("submit", submit);
+  delete.addEventListener("submit", (e) => {
+    deleteReportById(e, reportId);
+  });
 });
