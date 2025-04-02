@@ -1,5 +1,4 @@
 import { getLocalStorageData } from "./libs/initializeMockData.js";
-import { checkDataLocalStorage } from "./libs/initializeMockData.js";
 
 export const afterInitEvent = new Event("afterInitEvent");
 
@@ -126,7 +125,7 @@ window.addEventListener("afterInitEvent", () => {
     savedNickname ? (nickname.innerHTML = ` ${savedNickname}`) : "";
     savedJob ? (jobTitle.innerHTML = `-${savedJob}`) : "";
 
-    if (getLocalStorageData().length > 0) {
+    if (localStorage.getItem("reportData") && getLocalStorageData().length > 0) {
       const data = getLocalStorageData();
       data.forEach((element) => {
         if (
