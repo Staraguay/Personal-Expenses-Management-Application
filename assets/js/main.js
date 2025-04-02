@@ -82,7 +82,7 @@ window.addEventListener("afterInitEvent", () => {
 
   // Render the donut graph in the dashboard
   if (
-    window.location.pathname === "/" ||
+    window.location.pathname === "../../" ||
     window.location.pathname === "/index.html"
   ) {
     let labelsUnique = {};
