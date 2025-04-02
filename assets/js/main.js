@@ -447,4 +447,7 @@ window.addEventListener("afterInitEvent", () => {
       document.getElementById("chartID").innerHTML = '<div class="text-center">No data yet</div>';
     }
   }
+  else{
+    console.log("Error");
+  }
 });
