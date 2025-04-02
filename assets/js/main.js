@@ -82,8 +82,8 @@ window.addEventListener("afterInitEvent", () => {
 
   // Render the donut graph in the dashboard
   if (
-    window.location.pathname === "../../" ||
-    window.location.pathname === "/index.html"
+    window.location.pathname === "./" ||
+    window.location.pathname === "/index.html" || window.location.pathname === "/Personal-Expenses-Management-Application/"
   ) {
     let labelsUnique = {};
     let last6monthsExpenses = {};
@@ -157,7 +157,6 @@ window.addEventListener("afterInitEvent", () => {
           totalIncomingsLastMonth += Number(element["amount"]);
         }
       });
-      console.log(labelsUnique);
       if (Object.keys(labelsUnique).length > 0) {
         // get the percentage per each unique label
         Object.keys(labelsUnique).forEach((label) => {
