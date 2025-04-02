@@ -1,0 +1,452 @@
+[
+  {
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "1",
+    "transaction": "expense",
+    "amount": "100",
+    "category": "grocery",
+    "date": "2025-03-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "2",
+    "transaction": "expense",
+    "amount": "50",
+    "category": "transport",
+    "date": "2025-03-02"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "3",
+    "transaction": "expense",
+    "amount": "200",
+    "category": "rent",
+    "date": "2025-03-03"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "4",
+    "transaction": "expense",
+    "amount": "30",
+    "category": "entertainment",
+    "date": "2025-03-04"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "5",
+    "transaction": "expense",
+    "amount": "80",
+    "category": "dining",
+    "date": "2025-03-05"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "6",
+    "transaction": "expense",
+    "amount": "120",
+    "category": "utilities",
+    "date": "2025-02-06"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "7",
+    "transaction": "expense",
+    "amount": "15",
+    "category": "snacks",
+    "date": "2025-02-07"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "8",
+    "transaction": "expense",
+    "amount": "300",
+    "category": "shopping",
+    "date": "2025-02-08"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "9",
+    "transaction": "expense",
+    "amount": "60",
+    "category": "gas",
+    "date": "2025-02-09"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "10",
+    "transaction": "expense",
+    "amount": "40",
+    "category": "subscription",
+    "date": "2025-02-10"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "11",
+    "transaction": "expense",
+    "amount": "250",
+    "category": "medical",
+    "date": "2025-01-11"
+  },
+  {
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "12",
+    "transaction": "expense",
+    "amount": "90",
+    "category": "clothing",
+    "date": "2025-01-12"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "13",
+    "transaction": "expense",
+    "amount": "35",
+    "category": "coffee",
+    "date": "2025-01-13"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "14",
+    "transaction": "expense",
+    "amount": "110",
+    "category": "electronics",
+    "date": "2025-01-14"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "15",
+    "transaction": "expense",
+    "amount": "75",
+    "category": "books",
+    "date": "2025-01-15"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "16",
+    "transaction": "expense",
+    "amount": "95",
+    "category": "pets",
+    "date": "2024-12-16"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "17",
+    "transaction": "expense",
+    "amount": "45",
+    "category": "gym",
+    "date": "2024-12-17"
+  },
+  {
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "18",
+    "transaction": "expense",
+    "amount": "500",
+    "category": "furniture",
+    "date": "2024-12-18"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "19",
+    "transaction": "expense",
+    "amount": "55",
+    "category": "car repair",
+    "date": "2024-12-19"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "20",
+    "transaction": "expense",
+    "amount": "20",
+    "category": "charity",
+    "date": "2024-12-20"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "21",
+    "transaction": "expense",
+    "amount": "400",
+    "category": "education",
+    "date": "2024-11-21"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "22",
+    "transaction": "expense",
+    "amount": "85",
+    "category": "beauty",
+    "date": "2024-11-22"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "23",
+    "transaction": "expense",
+    "amount": "10",
+    "category": "lottery",
+    "date": "2024-11-23"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "24",
+    "transaction": "expense",
+    "amount": "95",
+    "category": "home maintenance",
+    "date": "2024-11-24"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "25",
+    "transaction": "expense",
+    "amount": "150",
+    "category": "travel",
+    "date": "2024-11-25"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "26",
+    "transaction": "incomings",
+    "amount": "500",
+    "category": "salary",
+    "date": "2024-09-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "27",
+    "transaction": "incomings",
+    "amount": "200",
+    "category": "freelance",
+    "date": "2024-09-05"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "28",
+    "transaction": "incomings",
+    "amount": "150",
+    "category": "investment",
+    "date": "2024-09-10"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "29",
+    "transaction": "incomings",
+    "amount": "50",
+    "category": "gift",
+    "date": "2024-09-15"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "30",
+    "transaction": "incomings",
+    "amount": "300",
+    "category": "bonus",
+    "date": "2024-09-20"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "31",
+    "transaction": "incomings",
+    "amount": "450",
+    "category": "salary",
+    "date": "2024-10-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "32",
+    "transaction": "incomings",
+    "amount": "220",
+    "category": "freelance",
+    "date": "2024-10-06"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "33",
+    "transaction": "incomings",
+    "amount": "130",
+    "category": "investment",
+    "date": "2024-10-11"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "34",
+    "transaction": "incomings",
+    "amount": "70",
+    "category": "gift",
+    "date": "2024-10-16"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "35",
+    "transaction": "incomings",
+    "amount": "500",
+    "category": "salary",
+    "date": "2024-11-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "36",
+    "transaction": "incomings",
+    "amount": "300",
+    "category": "freelance",
+    "date": "2024-11-07"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "37",
+    "transaction": "incomings",
+    "amount": "160",
+    "category": "investment",
+    "date": "2024-11-12"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "38",
+    "transaction": "incomings",
+    "amount": "40",
+    "category": "gift",
+    "date": "2024-11-17"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "39",
+    "transaction": "incomings",
+    "amount": "600",
+    "category": "salary",
+    "date": "2024-12-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "40",
+    "transaction": "incomings",
+    "amount": "250",
+    "category": "freelance",
+    "date": "2024-12-08"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "41",
+    "transaction": "incomings",
+    "amount": "200",
+    "category": "investment",
+    "date": "2024-12-13"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "42",
+    "transaction": "incomings",
+    "amount": "90",
+    "category": "gift",
+    "date": "2024-12-18"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "43",
+    "transaction": "incomings",
+    "amount": "700",
+    "category": "salary",
+    "date": "2025-01-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "44",
+    "transaction": "incomings",
+    "amount": "280",
+    "category": "freelance",
+    "date": "2025-01-09"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "45",
+    "transaction": "incomings",
+    "amount": "180",
+    "category": "investment",
+    "date": "2025-01-14"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "46",
+    "transaction": "incomings",
+    "amount": "50",
+    "category": "gift",
+    "date": "2025-01-19"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "47",
+    "transaction": "incomings",
+    "amount": "750",
+    "category": "salary",
+    "date": "2025-02-01"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "48",
+    "transaction": "incomings",
+    "amount": "300",
+    "category": "freelance",
+    "date": "2025-02-10"
+  },
+  {    
+    "name" : "Test",
+    "shop" : "Walmart",
+    "id": "49",
+    "transaction": "incomings",
+    "amount": "210",
+    "category": "investment",
+    "date": "2025-02-15"
+  },
+  {
+    "id": "50",
+    "name" : "Test",
+    "shop" : "Walmart",
+    "transaction": "incomings",
+    "amount": "120",
+    "category": "gift",
+    "date": "2025-02-20"
+  }
+]
