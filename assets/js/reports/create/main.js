@@ -1,4 +1,5 @@
 import Toast from "../../libs/Toast.js";
+import { getLocalStorageData } from "../../libs/initializeMockData.js";
 import {
   TYPE,
   switchCategoryType,
@@ -49,8 +50,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Store form values in localStorage
     const array = localStorage.getItem("reportData");
-
-    if (array) {
+    if (getLocalStorageData().length > 0) {
       const reportData = JSON.parse(array);
 
       const ids = reportData.map((item) => {
@@ -66,12 +66,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const newData = [...reportData, data];
       localStorage.setItem("reportData", JSON.stringify(newData));
     } else {
-      const reportData = [formValues];
+      const reportData = [{id: "1",...formValues}];
       localStorage.setItem("reportData", JSON.stringify(reportData));
     }
 
     modalInstance.hide();
     toast.show();
+    setTimeout(() => {
+      window.location.replace("/reports/");
+  }, 2000); 
   });
 
   switchCategoryType(TYPE.expense);

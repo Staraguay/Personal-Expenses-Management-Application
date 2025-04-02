@@ -1,135 +1,132 @@
 import { getLocalStorageData } from "./libs/initializeMockData.js";
+import { checkDataLocalStorage } from "./libs/initializeMockData.js";
 
 export const afterInitEvent = new Event("afterInitEvent");
 
-    // Function to Save Settings
-    function saveSettings() {
-      const currency = document.getElementById("currency").value;
-      const nickname = document.getElementById("nickname").value.trim();
-      const job = document.getElementById("job").value.trim();
+// Function to Save Settings
+function saveSettings() {
+  const currency = document.getElementById("currency").value;
+  const nickname = document.getElementById("nickname").value.trim();
+  const job = document.getElementById("job").value.trim();
 
-      // Store in LocalStorage
-      localStorage.setItem("currency", currency);
-      localStorage.setItem("nickname", nickname);
-      localStorage.setItem("job", job);
+  // Store in LocalStorage
+  localStorage.setItem("currency", currency);
+  localStorage.setItem("nickname", nickname);
+  localStorage.setItem("job", job);
 
-      // Show confirmation message
-      const message = document.getElementById("savedMessage");
-      message.style.display = "block";
-      setTimeout(() => {
-        message.style.display = "none";
-      }, 2000);
+  // Show confirmation message
+  const message = document.getElementById("savedMessage");
+  message.style.display = "block";
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 2000);
+}
+
+//add event listener to settings button
+const btnForm = document.getElementById("settingsBtn");
+if (btnForm) {
+  btnForm.addEventListener("click", saveSettings);
+}
+
+// Function to Load Saved Settings
+function loadSettings() {
+  if (document.getElementById("currency")) {
+    document.getElementById("currency").value =
+      localStorage.getItem("currency") || "USD";
+    document.getElementById("nickname").value =
+      localStorage.getItem("nickname") || "";
+    document.getElementById("job").value = localStorage.getItem("job") || "";
+  }
+}
+// Load settings when page loads
+window.addEventListener("DOMContentLoaded", (event) => {
+  if (window.location.pathname === "/configurations/") {
+    loadSettings();
+  }
+});
+
+window.addEventListener("afterInitEvent", () => {
+  // color variables
+
+  const firstColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--first-color")
+    .trim();
+  const secondColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--second-color")
+    .trim();
+  const thirdColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--third-color")
+    .trim();
+  const fourthColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--fourth-color")
+    .trim();
+  const fiveColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--five-color")
+    .trim();
+  const sixColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--six-color")
+    .trim();
+
+  // generate a new color
+
+  function generateNewColor() {
+    let symbols, color;
+    symbols = "0123456789ABCDEF";
+    color = "#";
+
+    for (let i = 0; i < 6; i++) {
+      color = color + symbols[Math.floor(Math.random() * 16)];
     }
 
-    //add event listener to settings button
-    const btnForm = document.getElementById("settingsBtn");
-    if (btnForm) {
-      btnForm.addEventListener("click", saveSettings);
+    return color;
+  }
+
+  // Render the donut graph in the dashboard
+  if (
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html"
+  ) {
+    let labelsUnique = {};
+    let last6monthsExpenses = {};
+    let last6monthsIncomings = {};
+    let donutColors = [];
+    let totalExpenses = 0;
+    let totalIncomings = 0;
+    let totalExpensesLastMonth = 0;
+    let totalIncomingsLastMonth = 0;
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+    let currency = localStorage.getItem("currency");
+    if (!currency) {
+      currency = "USD";
     }
 
-    // Function to Load Saved Settings
-    function loadSettings() {
-      if (document.getElementById("currency")) {
-        document.getElementById("currency").value =
-          localStorage.getItem("currency") || "USD";
-        document.getElementById("nickname").value =
-          localStorage.getItem("nickname") || "";
-        document.getElementById("job").value =
-          localStorage.getItem("job") || "";
-      }
-    }
-    // Load settings when page loads
-    window.addEventListener("DOMContentLoaded", (event) => {
-      if(window.location.pathname === "/configurations/"){
-        loadSettings();
-      };
-    });
+    document.getElementById(
+      "date-period"
+    ).innerHTML = `*${months[currentMonth]} data`;
+    let nickname = document.getElementById("nickname");
+    let jobTitle = document.getElementById("job");
+    const savedNickname = localStorage.getItem("nickname");
+    const savedJob = localStorage.getItem("job");
 
-window.addEventListener('afterInitEvent', ()=> {
-  
+    savedNickname ? (nickname.innerHTML = ` ${savedNickname}`) : "";
+    savedJob ? (jobTitle.innerHTML = `-${savedJob}`) : "";
 
- 
-     // color variables
-
-    const firstColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--first-color")
-      .trim();
-    const secondColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--second-color")
-      .trim();
-    const thirdColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--third-color")
-      .trim();
-    const fourthColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--fourth-color")
-      .trim();
-    const fiveColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--five-color")
-      .trim();
-    const sixColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--six-color")
-      .trim();
-
-    // generate a new color
-
-    function generateNewColor() {
-      let symbols, color;
-      symbols = "0123456789ABCDEF";
-      color = "#";
-
-      for (let i = 0; i < 6; i++) {
-        color = color + symbols[Math.floor(Math.random() * 16)];
-      }
-
-      return color;
-    }
-
-    // Render the donut graph in the dashboard
-    if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
-    ) {
-      let labelsUnique = {};
-      let last6monthsExpenses = {};
-      let last6monthsIncomings = {};
-      let donutColors = [];
-      let totalExpenses = 0;
-      let totalIncomings = 0;
-      let totalExpensesLastMonth = 0;
-      let totalIncomingsLastMonth = 0;
-      const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const currentMonth = new Date().getMonth();
-      const currentYear = new Date().getFullYear();
-      let currency = localStorage.getItem("currency");
-      if (!currency) {
-        currency = "USD";
-      }
-
-      document.getElementById(
-        "date-period"
-      ).innerHTML = `*${months[currentMonth]} data`;
-      let nickname = document.getElementById("nickname");
-      let jobTitle = document.getElementById("job");
-      const savedNickname = localStorage.getItem("nickname");
-      const savedJob = localStorage.getItem("job");
-
-      savedNickname ? nickname.innerHTML = ` ${savedNickname}` : "";
-      savedJob ? jobTitle.innerHTML = `-${savedJob}` : "";
-
-
+    if (getLocalStorageData().length > 0) {
       const data = getLocalStorageData();
       data.forEach((element) => {
         if (
@@ -161,69 +158,72 @@ window.addEventListener('afterInitEvent', ()=> {
           totalIncomingsLastMonth += Number(element["amount"]);
         }
       });
+      console.log(labelsUnique);
+      if (Object.keys(labelsUnique).length > 0) {
+        // get the percentage per each unique label
+        Object.keys(labelsUnique).forEach((label) => {
+          let sum = 0;
 
-      // get the percentage per each unique label
-      Object.keys(labelsUnique).forEach((label) => {
-        let sum = 0;
+          data.forEach((element) => {
+            if (
+              element["transaction"] == "expense" &&
+              element["category"] == label &&
+              new Date(element["date"].replace(/-/g, "/")).getMonth() ===
+                currentMonth
+            ) {
+              sum += Number(element["amount"]);
+            }
+          });
 
-        data.forEach((element) => {
-          if (
-            element["transaction"] == "expense" &&
-            element["category"] == label &&
-            new Date(element["date"].replace(/-/g, "/")).getMonth() ===
-              currentMonth
-          ) {
-            sum += Number(element["amount"]);
-          }
+          labelsUnique[label] = (sum / totalExpenses) * 100;
         });
-
-        labelsUnique[label] = (sum / totalExpenses) * 100;
-      });
-
-      // generate random colors
-      for (let i = 0; i < Object.keys(labelsUnique).length; i++) {
-        let newColor = generateNewColor();
-        if (!donutColors[newColor]) {
-          donutColors.push(generateNewColor());
+  
+        // generate random colors
+        for (let i = 0; i < Object.keys(labelsUnique).length; i++) {
+          let newColor = generateNewColor();
+          if (!donutColors[newColor]) {
+            donutColors.push(generateNewColor());
+          }
         }
+
+        // configuration of graph
+        const chartData = {
+          labels: Object.keys(labelsUnique), // unique labels
+          datasets: [
+            {
+              data: Object.values(labelsUnique), // Percentages of each category
+              backgroundColor: donutColors, // arrays of unique random colors
+              hoverOffset: 10,
+            },
+          ],
+        };
+
+        // Chart settings
+        const config = {
+          type: "doughnut",
+          data: chartData,
+          options: {
+            plugins: {
+              legend: { display: false },
+            },
+            cutout: "60%", // Make the hole in the center
+          },
+        };
+
+        //render de donut
+        const myChart = new Chart(document.getElementById("myChart"), config);
+
+        // Generate the custom legend for the donut
+        const legendContainer = document.getElementById("chartLegend");
+        chartData.labels.forEach((label, index) => {
+          const legendItem = document.createElement("div");
+          legendItem.className = "legend-child";
+          legendItem.innerHTML = `<span style="background-color: ${chartData.datasets[0].backgroundColor[index]};"></span> ${label}`;
+          legendContainer.appendChild(legendItem);
+        });
+      } else {
+        document.getElementById("donutGraph").innerHTML = '<div class="text-center">No data yet</div>';
       }
-
-      // configuration of graph
-      const chartData = {
-        labels: Object.keys(labelsUnique), // unique labels
-        datasets: [
-          {
-            data: Object.values(labelsUnique), // Percentages of each category
-            backgroundColor: donutColors, // arrays of unique random colors
-            hoverOffset: 10,
-          },
-        ],
-      };
-
-      // Chart settings
-      const config = {
-        type: "doughnut",
-        data: chartData,
-        options: {
-          plugins: {
-            legend: { display: false },
-          },
-          cutout: "60%", // Make the hole in the center
-        },
-      };
-
-      //render de donut
-      const myChart = new Chart(document.getElementById("myChart"), config);
-
-      // Generate the custom legend for the donut
-      const legendContainer = document.getElementById("chartLegend");
-      chartData.labels.forEach((label, index) => {
-        const legendItem = document.createElement("div");
-        legendItem.className = "legend-child";
-        legendItem.innerHTML = `<span style="background-color: ${chartData.datasets[0].backgroundColor[index]};"></span> ${label}`;
-        legendContainer.appendChild(legendItem);
-      });
-
       // fill the main cards
       document.getElementById(
         "total-expenses"
@@ -241,16 +241,20 @@ window.addEventListener('afterInitEvent', ()=> {
       let sortedExpensesArray = Object.entries(labelsUnique).sort(
         (a, b) => b[1] - a[1]
       );
-      document.getElementById(
-        "biggest-expense-category"
-      ).innerHTML = `in ${sortedExpensesArray[0][0]}`;
-      let max = (Number(sortedExpensesArray[0][1]) * totalExpenses) / 100;
-      document.getElementById(
-        "biggest-expense"
-      ).innerHTML = `${new Intl.NumberFormat(navigator.language, {
-        style: "currency",
-        currency: currency,
-      }).format(max)}`;
+      if (Object.keys(labelsUnique).length > 0) {
+        document.getElementById(
+          "biggest-expense-category"
+        ).innerHTML = `in ${sortedExpensesArray[0][0]}`;
+        let max = (Number(sortedExpensesArray[0][1]) * totalExpenses) / 100;
+        document.getElementById(
+          "biggest-expense"
+        ).innerHTML = `${new Intl.NumberFormat(navigator.language, {
+          style: "currency",
+          currency: currency,
+        }).format(max)}`;
+      } else {
+        document.getElementById("biggest-expense").innerHTML = "no data yet";
+      }
       //get last month stadistics
       let stadisticsExpenses = 0;
       if (totalExpensesLastMonth > 0) {
@@ -435,8 +439,13 @@ window.addEventListener('afterInitEvent', ()=> {
       window.addEventListener("resize", () => {
         myChartMix.resize();
       });
-    } 
-})
-
-
-
+    }
+    else{
+      document.getElementById("total-expenses").innerHTML = '<div class="text-center">No data yet</div>';
+      document.getElementById("total-incomings").innerHTML = '<div class="text-center">No data yet</div>';
+      document.getElementById("biggest-expense").innerHTML = '<div class="text-center">No data yet</div>';
+      document.getElementById("donutGraph").innerHTML = '<div class="text-center">No data yet</div>';
+      document.getElementById("chartID").innerHTML = '<div class="text-center">No data yet</div>';
+    }
+  }
+});
